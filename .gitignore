@@ -1,0 +1,8 @@
+.env
+node-modules/
+*~
+*.bak
+*.swp
+*.pem
+*.cred
+
