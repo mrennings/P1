@@ -1,7 +1,8 @@
 const tasklist = document.getElementById("tasks");
 
 
-(function createTodoLI() {
+function createTodoLI() {
+    tasklist.innerHTML = "";
     todos.forEach((todo) => {
         const li = document.createElement("li");
         li.classList.add("task");
@@ -16,15 +17,18 @@ const tasklist = document.getElementById("tasks");
         const textTask = textDiv.appendChild(document.createTextNode(todo["todo"]));
         // ! div: Actions (Delete, Edit, Date Created, …)
         const actionsDiv = li.appendChild(document.createElement("div"));
-        // TODO Edit, Delete, creation date
+        
         // taskID == date created
         const taskID = actionsDiv.appendChild(document.createElement("input"));
         taskID.setAttribute("type", "hidden");
         taskID.value = todo["created"];
+        
         const btnEdit = actionsDiv.appendChild(document.createElement("i"));
         btnEdit.classList.add("fa", "fa-pencil");
         const btnDel = actionsDiv.appendChild(document.createElement("i"));
         btnDel.classList.add("fa", "fa-trash");
+        btnDel.addEventListener("click", () => delTask(todo.created));
+        
         const textCreated = actionsDiv.appendChild(document.createElement("input"));
         textCreated.setAttribute("type", "text");
         textCreated.classList.add("createdDate");
@@ -33,6 +37,8 @@ const tasklist = document.getElementById("tasks");
 
         tasklist.appendChild(li);
     });
-})();
+};
 
+
+createTodoLI();
 console.log("html.js done");

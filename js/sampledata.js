@@ -34,5 +34,5 @@ const sampleData = [
 ];
 //Beispieldaten speichern
 function saveSample() {
-    writeStorage(JSON.stringify(sampleData));
+    writeStorage(sampleData);
 }

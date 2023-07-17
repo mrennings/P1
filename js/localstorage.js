@@ -1,15 +1,18 @@
-function writeStorage(json) {
+function writeStorage(list) {
     /*
      * Erwartet ein JSON-Objekt mit den ToDos und schreibt es in 
      * den localStorage
      * 
-     * json             die zu speichernden ToDos als JSON
+     * list             die zu speichernden ToDos als Liste
      * 
      * return true      bei erfolgreichem Schreiben
      * return false     bei Fehlern
     */
     try {
-        localStorage.setItem("ToDo", json);
+        // FIXME: Zum Testen
+        //localStorage.setItem("ToDo", JSON.stringify(list));
+        console.log("LocalStorage wäre geschrieben worden:");
+        console.log(JSON.stringify(list));
     } catch (error) {
         console.error("Fehler in writeStorage(): " + error);
         return false;
@@ -24,7 +27,7 @@ function readStorage() {
      * Bei Fehlern wird eine entsprechende Fehlermeldung im JSON-Objekt
      * zurückgegeben.
      * 
-     * return {JSON}
+     * return [ToDos]
     */
     let todos = {};
     try {
