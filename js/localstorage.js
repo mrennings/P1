@@ -46,5 +46,3 @@ function clearStorage() {
     localStorage.clear()
     console.log("localStorage cleared");
 }
-
-console.log("localstorage.js done");
