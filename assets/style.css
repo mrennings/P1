@@ -178,3 +178,10 @@ h1 {
     transition: transform 0,25s ease;
     background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
 }
+.clear-btn.active{
+    opacity: 0.9;
+    pointer-events: auto;
+}
+.clear-btn:active{
+    transform: scale(0.93);
+}
