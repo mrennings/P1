@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="assets/modal.css">
     <link rel="stylesheet" href="assets/style.css">
     <script src="js/localstorage.js"></script>
-    <script src="js/todo.js"></script>
+    <script defer src="js/todo.js"></s
     <script defer src="js/html.js"></script>
 </head>
 
@@ -35,7 +36,27 @@
         </div>
     </div>
 
+
+    <section class="modal hidden">
+        <div class="flex">
+            <span id="editTitle">Edit</span>
+            <button class="btn-close">⨉</button>
+        </div>
+        <div>
+            <h3 id="editTitle"></h3>
+            <p>
+                <label for="editTask">Aufgabe: </label>
+                <input type="text" id="editTask" name="editTask" value="test">
+            </p>
+        </div>
+        
+        <button class="btn" id="updTask">Aktualisieren</button>
+    </section>
+    <div class="overlay hidden"></div>
+
+
     <script src="js/function.js"></script>
+
 
 </body>
 
