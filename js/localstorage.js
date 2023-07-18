@@ -38,7 +38,12 @@ function readStorage() {
             msg: error
         });
     }
-    return JSON.parse(todos);
+    if (todos != null) {
+        console.log(JSON.parse(todos));
+        return JSON.parse(todos);
+    } else {
+        return [];
+    }
 }
 
 
