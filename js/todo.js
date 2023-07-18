@@ -44,7 +44,6 @@ function delTask(id) {
     let deleted = "";
 
     const index = getIndex(id);
-    console.log(todos);
     if (index == -1) {
         console.error(`Task "${id}" nicht gefunden. Dies sollte nicht passieren.`);
         return false;
@@ -93,7 +92,7 @@ const openModal = function (id) {
     document.getElementById("editTitle").innerHTML = `»${todos[index].todo}« bearbeiten`;
     const inputTask = document.getElementById("editTask");
     inputTask.value = todos[index].todo;
-
+/
 
     update = () => {
         updateTask(index, inputTask.value);
