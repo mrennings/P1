@@ -12,6 +12,7 @@
     <script src="js/localstorage.js"></script>
     <script defer src="js/todo.js"></script>
     <script defer src="js/html.js"></script>
+    <script defer src="js/function.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
         <div id="error" class="error">Please Enter a Task</div>
         <div id="todo-header" class="todo-header">
             <input type="text" id="input-task" placeholder="Meine Aufgaben">
-            <button id="add-task"><i class="fa fa-fw fa-plus"></i>
+            <button id="add-task"><i class="fa fa-fw fa-plus"></i></button>
             </button>
         </div>
         <div class="controls">
@@ -37,27 +38,24 @@
         </div>
     </div>
 
+    <div class="modal-container hidden">
+        <section class="modal">
+            <div class="flex">
+                <span id="editTitleLabel">Edit</span>
+                <button class="btn-close">⨉</button>
+            </div>
+            <div>
+                <h3 id="editTitle"></h3>
+                <p>
+                    <label for="editTask">Aufgabe: </label>
+                    <input type="text" id="editTask" name="editTask" value="test">
+                </p>
+            </div>
 
-    <section class="modal hidden">
-        <div class="flex">
-            <span id="editTitle">Edit</span>
-            <button class="btn-close">⨉</button>
-        </div>
-        <div>
-            <h3 id="editTitle"></h3>
-            <p>
-                <label for="editTask">Aufgabe: </label>
-                <input type="text" id="editTask" name="editTask" value="test">
-            </p>
-        </div>
-        
-        <button class="btn" id="updTask">Aktualisieren</button>
-    </section>
-    <div class="overlay hidden"></div>
-
-
-    <script src="js/function.js"></script>
-
+            <button class="btn" id="updTask">Aktualisieren</button>
+        </section>
+        <div class="overlay hidden"></div>
+    </div>
 
 </body>
 
