@@ -2,8 +2,9 @@ let todos = readStorage();
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
-const openModalBtn = document.querySelector(".btn-open");
 const closeModalBtn = document.querySelector(".btn-close");
+const btnUpdate = document.getElementById("updTask");
+let update;
 
 function getIndex(id) {
     /*
@@ -16,6 +17,20 @@ function getIndex(id) {
     */
     return todos.findIndex(elem => elem.created == id);
 }
+
+function isTextValid(text) {
+    /*
+     * Überprüft den übergebenen String auf Gültigkeit
+     *
+     * text             der zu prüfende Text
+     *
+     * return true      wenn Text gültig
+     * return false     wenn Text ungültig
+    */
+    // return (text != "" && text != undefined && text != null)
+    return /^[\w(!]/.test(text.trim());
+}
+
 
 function delTask(id) {
     /*
@@ -75,26 +90,26 @@ const openModal = function (id) {
      * id               ID des zu bearbeitenden Eintrags
     */
     const index = getIndex(id);
-    document.getElementById("editTitle").innerHTML = `${todos[index].todo} bearbeiten`;
-    const editTask = document.getElementById("editTask");
-    editTask.value = todos[index].todo;
+    document.getElementById("editTitle").innerHTML = `»${todos[index].todo}« bearbeiten`;
+    const inputTask = document.getElementById("editTask");
+    inputTask.value = todos[index].todo;
 
-    const updTask = document.getElementById("updTask");
-    updTask.addEventListener("click", () => updateTask(id, editTask.value));
-    updTask.addEventListener("keydown", (e) => {
-        // Funktioniert noch nciht ganz wie gedacht, nur via Tab+Enter
-        if (e.key === "Enter" && !modal.classList.contains("hidden")) {
-            updateTask(id, editTask.value);
-        }
-    })
+
+    update = () => {
+        updateTask(index, inputTask.value);
+    }
+    // const updTask = document.getElementById("updTask");
+    btnUpdate.addEventListener("click", update);
 
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
 };
+
 const closeModal = function () {
-    // * »Schließt« das Modal-Fenster per Mausklick
+    // * »Schließt« das Modal-Fenster
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
+    btnUpdate.removeEventListener("click", update);
 };
 
 closeModalBtn.addEventListener("click", closeModal);
@@ -106,16 +121,18 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
-function updateTask(id, text) {
+function updateTask(index, text) {
     /*
-     * Akutalisiert einen Task mit den übergebenen Werten
+     * Aktualisiert einen Task mit den übergebenen Werten
      *
-     * id               ID des zu aktualisieren Tasks
+     * index            Index des zu aktualisieren Tasks
      * text             Neuer Aufgabentext
     */
-    const index = getIndex(id);
-    todos[index].todo = text;
-
+    if (isTextValid(text)) {
+        todos[index].todo = text;
+    } else {
+        alert("Eingabe fehlerhaft");
+    }
     closeModal();
 
     writeStorage(todos);
