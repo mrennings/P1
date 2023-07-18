@@ -28,7 +28,8 @@ function isTextValid(text) {
      * return false     wenn Text ungültig
     */
     // return (text != "" && text != undefined && text != null)
-    return /^[\w(!]/.test(text.trim());
+    let t = text.trim();
+    return /^[\w(!]/.test(t);
 }
 
 
