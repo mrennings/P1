@@ -1,25 +1,25 @@
 # TODO
 
-- [ ] Dateiformat/Speicherformat (todo.txt[^1]/JSON/…)
+- [x] Dateiformat/Speicherformat (todo.txt[^1]/JSON/…)
     -> LocalStorage in JSON, evtl. späterer Export in JSON und todo.txt
-  - [ ] Datenstruktur
+  - [x] Datenstruktur
   - [ ] verwendete »Features«
-    - Todo-Text
+    - [x] Todo-Text
     - [ ] Priorität (wie viele)
-    - Done
+    - [x] Done
     - Fälligkeitsdatum (YYYY-MM-DD)
-    - Erstellungsdatum (bei todo.txt)
-    - Erledigt-Datum (bei todo.txt) (@later)
+    - [x] Erstellungsdatum (bei todo.txt)
+    - [x] Erledigt-Datum (bei todo.txt) (@later)
     - [ ] Kontext?
     - [ ] Projekt?
     - [ ] Timestamps, um Dauer zu berechnen? (@later)
-- [ ] Erledigte Aufgabe direkt löschen oder erst markieren und bei User-Eingabe löschen?
+- [x] Erledigte Aufgabe direkt löschen oder erst markieren und bei User-Eingabe löschen? -> Nicht direkt löschen
 
 - [ ] Design Webseite
   - [ ] CSS
 - [ ] Struktur js-files
 
-- [ ] Strukturierung Arbeitsablauf (Trello?)
+- [x] Strukturierung Arbeitsablauf (Trello?) -> Jira (einfach gehalten)
 
 
 [^1]: [Github](https://github.com/todotxt/todo.txt)

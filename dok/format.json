@@ -1,11 +1,11 @@
 {
- todo: "Text der Aufgabe",
- prio: "B"
- due: "Timestamp Fälligkeit",
- created: "TimeStamp Erstellungsdatum",
- start: "Timestamp Aufgabe angefangen",
- done: "Timestamp Erledigt",
- isDone: true/false,
- context: "@None",
- project: "+None"
+ "todo": "Text der Aufgabe",
+ "prio": "B",
+ "due": "Timestamp Fälligkeit",
+ "created": "TimeStamp Erstellungsdatum",
+ "start": "Timestamp Aufgabe angefangen",
+ "done": "Timestamp Erledigt",
+ "isDone": true/false,
+ "context": "@None",
+ "project": "+None"
 }
