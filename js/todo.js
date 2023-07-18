@@ -92,7 +92,6 @@ const openModal = function (id) {
     document.getElementById("editTitle").innerHTML = `»${todos[index].todo}« bearbeiten`;
     const inputTask = document.getElementById("editTask");
     inputTask.value = todos[index].todo;
-/
 
     update = () => {
         updateTask(index, inputTask.value);
