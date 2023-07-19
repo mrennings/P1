@@ -24,7 +24,6 @@ h1 {
     border-top-right-radius: 5px;
 }
 
-
 .tasker ul,
 .tasker li,
 .tasker .error,
@@ -53,8 +52,6 @@ h1 {
     background: #ff4747;
     color: #fff;
     padding: 14px;
-    /* margin-bottom: 10px; */
-    /* border-radius: 5px; */
     text-align: center;
 }
 
@@ -100,6 +97,7 @@ h1 {
 .todo-header button:hover {
     background: #5cb85c;
 }
+
 .todo-lists .task {
     display: block;
     position: relative;
@@ -143,37 +141,154 @@ h1 {
     justify-content: space-between;
     background: #6a7686;
 }
-.controls{
+
+.controls {
     padding: 18px 25px;
     border-bottom: 1px solid #ccc;
 }
-.filters span{
-    margin: 0 8px;
-    font-size: 17px;
-    color: white;
-    cursor: pointer;
-}
-.filters span:first-child{
-    margin-left: 0;
-}
-.controls .clear-btn{
+
+.controls select#filter {
     border: none;
-    opacity: 0,6;
+    opacity: 0.6;
     outline: none;
     color: #fff;
     cursor: pointer;
     font-size: 13px;
     padding: 7px 13px;
     border-radius: 4px;
-    letter-spacing: 0,3px;
+    letter-spacing: 0.3px;
+    transition: transform 0.25s ease;
+    background: linear-gradient(135deg, #2D5CFE 0%, #1798fb 100%);
+}
+
+.controls select#filter option {
+    background-color: #1798fb;
+}
+
+.controls .clear-btn {
+    border: none;
+    opacity: 0.6;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 7px 13px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
     pointer-events: none;
-    transition: transform 0,25s ease;
+    transition: transform 0.25s ease;
     background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
 }
-.clear-btn.active{
+
+.clear-btn.active {
     opacity: 0.9;
     pointer-events: auto;
 }
-.clear-btn:active{
+
+.clear-btn:active {
     transform: scale(0.93);
+}
+
+#modal-wrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+#modal-wrapper body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    position: relative;
+    min-height: 100vh;
+}
+
+#modal-wrapper .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 450px;
+    padding: 1.3rem;
+    min-height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+
+#modal-wrapper .modal .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#modal-wrapper .modal input {
+    padding: 0.7rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+#modal-wrapper .modal p {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0.4rem 0 0.2rem;
+}
+
+#modal-wrapper button {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+
+#modal-wrapper .btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    font-weight: 700;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+}
+
+#modal-wrapper .btn-open {
+    position: absolute;
+    bottom: 150px;
+}
+
+#modal-wrapper .btn-close {
+    transform: translate(10px, -20px);
+    padding: 0.5rem 0.7rem;
+    background: #eee;
+    border-radius: 50%;
+}
+
+#modal-wrapper .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+#modal-wrapper .modal {
+    z-index: 2;
+}
+
+#modal-wrapper .hidden {
+    display: none;
 }
