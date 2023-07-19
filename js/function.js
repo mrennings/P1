@@ -2,7 +2,6 @@
 function addTask() {
     const taskInput = document.getElementById('input-task');
     const taskValue = taskInput.value.trim();
-    console.log(addTask);
 
     if ( !isTextValid(taskValue)) {
         const errorDiv = document.getElementById('error');

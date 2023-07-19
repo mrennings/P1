@@ -10,7 +10,7 @@ function writeStorage(list) {
     */
     try {
         localStorage.setItem("ToDo", JSON.stringify(list));
-        console.log(JSON.stringify(list));
+        // console.log(JSON.stringify(list));
     } catch (error) {
         console.error("Fehler in writeStorage(): " + error);
         return false;
