@@ -2,9 +2,9 @@
 function addTask() {
     const taskInput = document.getElementById('input-task');
     const taskValue = taskInput.value.trim();
+    const errorDiv = document.getElementById('error');
 
     if ( !isTextValid(taskValue)) {
-        const errorDiv = document.getElementById('error');
         errorDiv.textContent = 'Was willst du erledigen?';
         errorDiv.style.display = 'block';
         return;
@@ -25,6 +25,7 @@ function addTask() {
         "project": "+None"
     };
 
+    errorDiv.style.display = 'none';
     todos.push(newTask);
 
     writeStorage(todos);
