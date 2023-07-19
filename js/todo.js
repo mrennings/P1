@@ -137,3 +137,10 @@ function updateTask(index, text) {
     writeStorage(todos);
     createTodoLI();
 }
+
+const btnClearAll = document.getElementById("clear-btn").addEventListener("click", () => {
+    console.log("in EventListener");
+    clearStorage();
+    todos = [];
+    createTodoLI();
+});
