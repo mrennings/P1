@@ -12,6 +12,7 @@
     <script src="js/localstorage.js"></script>
     <script defer src="js/todo.js"></script>
     <script defer src="js/html.js"></script>
+    <script defer src="js/function.js"></script>
 </head>
 
 <body>
@@ -25,11 +26,11 @@
             </button>
         </div>
         <div class="controls">
-            <div class="filters">
-                <span class="active" id="all">Alle</span>
-                <span id="open">Offene</span>
-                <span id="done">Erledigte</span>
-            </div>
+            <select id="filter">
+                <option value="all" selected>Alle</option>
+                <option value="open">Offene</option>
+                <option value="done">Erledigte</option>
+            </select>
             <button class="clear-btn">Alle Aufgaben löschen</button>
         </div>
         <div class="todo-lists">
@@ -54,10 +55,6 @@
         <button class="btn" id="updTask">Aktualisieren</button>
     </section>
     <div class="overlay hidden"></div>
-
-
-    <script src="js/function.js"></script>
-
 
 </body>
 
