@@ -139,7 +139,6 @@ function updateTask(index, text) {
 }
 
 const btnClearAll = document.getElementById("clear-btn").addEventListener("click", () => {
-    console.log("in EventListener");
     clearStorage();
     todos = [];
     createTodoLI();
