@@ -140,7 +140,9 @@ function updateTask(index, text) {
 
 const btnClearAll = document.getElementById("clear-btn").addEventListener("click", () => {
     // * Löscht alle ToDos
-    clearStorage();
-    todos = [];
-    createTodoLI();
+    if (confirm("Sollen wirklich alle ToDos gelöscht werden?")) {
+        clearStorage();
+        todos = [];
+        createTodoLI();
+    }
 });
