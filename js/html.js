@@ -7,6 +7,7 @@ function createTodoLI() {
      * Erstellt das html für die ToDo-Liste; wertet das Filter-Select (Dropdown) aus
     */
 
+    let arr = [];
     switch (selFilter.value) {
         case "open":
             arr = todos.filter(elem => elem.isDone == false);
@@ -15,7 +16,9 @@ function createTodoLI() {
             arr = todos.filter(elem => elem.isDone == true);
             break;
         default:
-            arr = todos;
+            arr = todos.filter(elem => elem.isDone == false)
+                    .concat(todos.filter(elem => elem.isDone == true));
+            console.log(arr);
     };
 
     tasklist.innerHTML = "";
@@ -66,6 +69,8 @@ function createTodoLI() {
     });
 };
 
+// * Wenn Filterbedingung geändert wird, reagieren
 selFilter.addEventListener("change", createTodoLI);
 
+// * Initial rendern
 createTodoLI();
