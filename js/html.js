@@ -1,10 +1,26 @@
 const tasklist = document.getElementById("tasks");
+const selFilter = document.getElementById("filter");
 
 
 function createTodoLI() {
+    /*
+     * Erstellt das html für die ToDo-Liste; wertet das Filter-Select (Dropdown) aus
+    */
+
+    switch (selFilter.value) {
+        case "open":
+            arr = todos.filter(elem => elem.isDone == false);
+            break;
+        case "done":
+            arr = todos.filter(elem => elem.isDone == true);
+            break;
+        default:
+            arr = todos;
+    };
+
     tasklist.innerHTML = "";
     let row = 0;
-    todos.forEach((todo) => {
+    arr.forEach((todo) => {
         const li = document.createElement("li");
         li.className = todo.isDone ? "task completed" : "task";
         li.classList.add(row % 2 == 0 ? "even" : "odd");
@@ -50,5 +66,6 @@ function createTodoLI() {
     });
 };
 
+selFilter.addEventListener("change", createTodoLI);
 
 createTodoLI();
