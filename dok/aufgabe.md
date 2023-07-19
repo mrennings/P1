@@ -16,7 +16,8 @@ Es soll eine interaktive ToDo-Liste erstellt werden, die komplett im Browser lä
 
 - Die ToDos sollten nach Themen gruppiert und gruppiert angezeigt werden können.
 
-- Die ToDo-Liste sollte persistent sein, d.h. die Aufgaben sollten beim Neuladen der Seite erhalten bleiben (local storage).
+- Die ToDo-Liste sollte persistent sein, d.h. die Aufgaben sollten beim Neuladen der Seite erhalten bleiben
+  - (local storage).
   - Direkt implementieren.
 
 - Die Anwendung sollte die Option bieten, ToDos zu durchsuchen, um schnell bestimmte Informationen zu finden.
