@@ -4,7 +4,7 @@ function addTask() {
     const taskValue = taskInput.value.trim();
     console.log(addTask);
 
-    if (taskValue === '') {
+    if ( !isTextValid(taskValue)) {
         const errorDiv = document.getElementById('error');
         errorDiv.textContent = 'Was willst du erledigen?';
         errorDiv.style.display = 'block';
@@ -16,25 +16,24 @@ function addTask() {
 
     const newTask = {
         "todo": taskValue,
-        "isDone": false,
+        "prio": "B",
+        "due": "",
         "created": Date.now(),
+        "start": "",
+        "done": "",
+        "isDone": false,
+        "context": "@None",
+        "project": "+None"
     };
 
     todos.push(newTask);
 
     writeStorage(todos);
     createTodoLI();
-    console.log(todos);
 }
 
 // EventListener
 const addTaskButton = document.getElementById("add-task");
 addTaskButton.addEventListener("click", addTask);
-
-// // Löschen einer Aufgabe
-// function deleteTask(event) {
-// const taskItem = event.target.closest('.task');
-// taskItem.remove();
-// }
 
 

@@ -9,9 +9,7 @@ function writeStorage(list) {
      * return false     bei Fehlern
     */
     try {
-        // FIXME: Zum Testen
-        //localStorage.setItem("ToDo", JSON.stringify(list));
-        console.log("LocalStorage wäre geschrieben worden:");
+        localStorage.setItem("ToDo", JSON.stringify(list));
         console.log(JSON.stringify(list));
     } catch (error) {
         console.error("Fehler in writeStorage(): " + error);
@@ -39,7 +37,6 @@ function readStorage() {
         });
     }
     if (todos != null) {
-        console.log(JSON.parse(todos));
         return JSON.parse(todos);
     } else {
         return [];
