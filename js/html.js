@@ -16,9 +16,9 @@ function createTodoLI() {
             arr = todos.filter(elem => elem.isDone == true);
             break;
         default:
+            // Sortierung: offene Tasks oberhalb der erledigten
             arr = todos.filter(elem => elem.isDone == false)
                     .concat(todos.filter(elem => elem.isDone == true));
-            console.log(arr);
     };
 
     tasklist.innerHTML = "";
