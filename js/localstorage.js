@@ -8,6 +8,12 @@ function writeStorage(list) {
      * return true      bei erfolgreichem Schreiben
      * return false     bei Fehlern
     */
+
+    if (list == null) {
+        console.error("Liste leer? Keine Liste übergeben?")
+        return false;
+    }
+
     try {
         localStorage.setItem("ToDo", JSON.stringify(list));
         // console.log(JSON.stringify(list));
