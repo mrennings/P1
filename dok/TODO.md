@@ -7,7 +7,7 @@
     - [x] Todo-Text
     - [ ] Priorität (wie viele)
     - [x] Done
-    - Fälligkeitsdatum (YYYY-MM-DD)
+    - [x] Fälligkeitsdatum (YYYY-MM-DD)
     - [x] Erstellungsdatum (bei todo.txt)
     - [x] Erledigt-Datum (bei todo.txt) (@later)
     - [ ] Kontext?
@@ -16,7 +16,7 @@
 - [x] Erledigte Aufgabe direkt löschen oder erst markieren und bei User-Eingabe löschen? -> Nicht direkt löschen
 - [ ] Design Webseite
   - [ ] CSS
-- [ ] Struktur js-files
+- [x] Struktur js-files
 
 - [x] Strukturierung Arbeitsablauf (Trello?) -> Jira (einfach gehalten)
 
