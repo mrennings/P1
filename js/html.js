@@ -66,22 +66,28 @@ function createTodoLI() {
         dateDiv.classList.add("dates");
         const textSpan = dateDiv.appendChild(document.createElement("span"));
         textSpan.innerHTML = new Date(todo.created).toLocaleDateString() + " → ";
-        const inputDue = textSpan.appendChild(document.createElement("input"));
-        inputDue.setAttribute("type", "date");
-        inputDue.id = todo.created;
-        inputDue.min = new Date().toISOString().replace(/T.*$/, "");
-        if (todo.due) {
-            inputDue.value = new Date(todo.due).toISOString().replace(/T.*$/, "");
-            if (todo.due - dreiTage < Date.now()) {
-                inputDue.classList.add("dreiTage");
-            } else if (todo.due - fuenfTage < Date.now()) {
-                inputDue.classList.add("fuenfTage");
+        if ( !todo.isDone) {
+            const inputDue = textSpan.appendChild(document.createElement("input"));
+            inputDue.setAttribute("type", "date");
+            inputDue.id = todo.created;
+            inputDue.min = new Date().toISOString().replace(/T.*$/, "");
+            if (todo.due) {
+                inputDue.value = new Date(todo.due).toISOString().replace(/T.*$/, "");
+                if (todo.due - dreiTage < Date.now()) {
+                    inputDue.classList.add("dreiTage");
+                } else if (todo.due - fuenfTage < Date.now()) {
+                    inputDue.classList.add("fuenfTage");
+                }
+            }
+            inputDue.addEventListener("change", (e) => {
+                setDueDate(e);
+            });
+            textSpan.classList.add("date-created");
+        } else {
+            if (todo.due) {
+                textSpan.innerHTML += new Date(todo.due).toLocaleDateString();
             }
         }
-        inputDue.addEventListener("change", (e) => {
-            setDueDate(e);
-        });
-        textSpan.classList.add("date-created");
         //const textCreated = actionsDiv.appendChild(document.createTextNode(new Date(todo.created).toLocaleDateString()));
         // const textCreated = li.appendChild(document.createTextNode(new Date(todo.created).toLocaleDateString()));
 
