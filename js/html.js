@@ -18,7 +18,6 @@ function createTodoLI() {
         default:
             arr = todos.filter(elem => elem.isDone == false)
                     .concat(todos.filter(elem => elem.isDone == true));
-            console.log(arr);
     };
 
     tasklist.innerHTML = "";
@@ -59,7 +58,17 @@ function createTodoLI() {
         btnDel.addEventListener("click", () => delTask(todo.created));
         
         const textSpan = actionsDiv.appendChild(document.createElement("span"));
-        textSpan.innerHTML = new Date(todo.created).toLocaleDateString();
+        textSpan.innerHTML = new Date(todo.created).toLocaleDateString() + " → ";
+        const inputDue = textSpan.appendChild(document.createElement("input"));
+        inputDue.setAttribute("type", "date");
+        inputDue.id = todo.created;
+        inputDue.min = new Date().toISOString().replace(/T.*$/, "");
+        if (todo.due) {
+            inputDue.value = new Date(todo.due).toISOString().replace(/T.*$/, "");
+        }
+        inputDue.addEventListener("change", (e) => {
+            setDueDate(e);
+        });
         textSpan.classList.add("date-created");
         //const textCreated = actionsDiv.appendChild(document.createTextNode(new Date(todo.created).toLocaleDateString()));
         // const textCreated = li.appendChild(document.createTextNode(new Date(todo.created).toLocaleDateString()));

@@ -146,3 +146,15 @@ const btnClearAll = document.getElementById("clear-btn").addEventListener("click
         createTodoLI();
     }
 });
+
+function setDueDate(event) {
+    /*
+     * Setzt das eingegebene Fälligkeitsdatum
+     *
+     * event            Event-Objekt des Eventlisteners
+    */
+    const index = getIndex(event.target.id);
+    todos[index].due = event.target.valueAsNumber;
+    writeStorage(todos);
+    createTodoLI();
+}
