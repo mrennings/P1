@@ -212,27 +212,23 @@ li {
 /* Container für die Items */
 .items {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    /* justify-content: right;
+    align-items: center; */
     gap: 5px;
 }
-
 /* Style Pencil (items) */
 .fa-pencil {
     color: #4A565C;
 }
-
 /* Hover-Effekt Pencil */
 .fa-pencil:hover {
     color: #d3d3b0;
     transform: scale(1.5);
 }
-
 /* Style Trash (items) */
 .fa-trash {
     color: #4A565C;
 }
-
 /* Hover-Effekt für Trash-Icon */
 .fa-trash:hover {
     color: #ed1c24;
@@ -241,25 +237,12 @@ li {
 
 .dates {
     margin-left: 1.9em;
-    /* clear:both;
-    display:block;
-    color: orange;*/
 }
 
-/* Style Datum
-.task.even,
-.task.odd {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 5px;
-}
-*/
+/* Style Datum */
 .date-created {
     font-size: 13px;
     color: #4A565C;
-    align-items: center;
 }
 
 .task.even input[type="date"],
@@ -268,10 +251,10 @@ li {
     color: #4A565C;
 } 
 .dreiTage {
-    color: #a30a0a;
+    color: #a30a0a !important; 
 }
 .fuenfTage {
-    color: #c89318;
+    color: #c89318 !important;
 }
 
 
