@@ -14,7 +14,6 @@
     - [ ] Projekt?
     - [ ] Timestamps, um Dauer zu berechnen? (@later)
 - [x] Erledigte Aufgabe direkt löschen oder erst markieren und bei User-Eingabe löschen? -> Nicht direkt löschen
-
 - [ ] Design Webseite
   - [ ] CSS
 - [ ] Struktur js-files
