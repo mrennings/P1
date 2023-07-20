@@ -29,8 +29,11 @@ function createTodoLI() {
         li.className = todo.isDone ? "task completed" : "task";
         li.classList.add(row % 2 == 0 ? "even" : "odd");
         
+        // ! Container-Div
+        const containerDiv = li.appendChild(document.createElement("div"));
+        containerDiv.classList.add("task-container");
         // ! div: Done
-        const doneDiv = li.appendChild(document.createElement("div"));
+        const doneDiv = containerDiv.appendChild(document.createElement("div"));
         doneDiv.classList.add("chkbox");
         const doneBox = doneDiv.appendChild(document.createElement("input"));
         // const doneBox = li.appendChild(document.createElement("input"));
@@ -40,13 +43,13 @@ function createTodoLI() {
         doneBox.addEventListener("change", () => markTaskDone(doneBox, todo.created));
 
         // ! div: ToDo-Text
-        const textDiv = li.appendChild(document.createElement("div"));
+        const textDiv = containerDiv.appendChild(document.createElement("div"));
         textDiv.classList.add("aufgabe");
         const textTask = textDiv.appendChild(document.createTextNode(todo["todo"]));
         // const textTask = li.appendChild(document.createTextNode(todo["todo"]));
         
         // ! div: Actions (Delete, Edit, Date Created, …)
-        const actionsDiv = li.appendChild(document.createElement("div"));
+        const actionsDiv = containerDiv.appendChild(document.createElement("div"));
         actionsDiv.classList.add("items")
         
         const btnEdit = actionsDiv.appendChild(document.createElement("i"));
