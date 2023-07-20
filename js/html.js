@@ -1,6 +1,7 @@
 const tasklist = document.getElementById("tasks");
 const selFilter = document.getElementById("filter");
-
+const dreiTage = 1000 * 60 * 60 * 24 * 3;
+const fuenfTage = 1000 * 60 * 60 * 24 * 5;
 
 function createTodoLI() {
     /*
@@ -65,6 +66,11 @@ function createTodoLI() {
         inputDue.min = new Date().toISOString().replace(/T.*$/, "");
         if (todo.due) {
             inputDue.value = new Date(todo.due).toISOString().replace(/T.*$/, "");
+            if (todo.due - dreiTage < Date.now()) {
+                inputDue.classList.add("dreiTage");
+            } else if (todo.due - fuenfTage < Date.now()) {
+                inputDue.classList.add("fuenfTage");
+            }
         }
         inputDue.addEventListener("change", (e) => {
             setDueDate(e);
