@@ -58,7 +58,9 @@ function createTodoLI() {
         btnDel.classList.add("fa", "fa-trash");
         btnDel.addEventListener("click", () => delTask(todo.created));
         
-        const textSpan = actionsDiv.appendChild(document.createElement("span"));
+        const dateDiv = li.appendChild(document.createElement("div"));
+        dateDiv.classList.add("dates");
+        const textSpan = dateDiv.appendChild(document.createElement("span"));
         textSpan.innerHTML = new Date(todo.created).toLocaleDateString() + " → ";
         const inputDue = textSpan.appendChild(document.createElement("input"));
         inputDue.setAttribute("type", "date");
