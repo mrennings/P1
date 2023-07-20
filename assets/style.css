@@ -1,3 +1,4 @@
+/* Body Todo-Liste */
 body {
     margin: 10px;
     padding: 0;
@@ -6,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
@@ -14,6 +15,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/*Container Überschrift*/
 h1 {
     text-align: center;
     background: #4b5b78;
@@ -42,21 +44,19 @@ h1 {
     -webkit-transition: all 0.2s ease;
 }
 
+/* Container Todo-liste (Gesamt) */
 .tasker {
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
 }
 
+/* Container Fehlermeldung */
 .tasker .error {
     display: none;
     background: #ff4747;
     color: #fff;
     padding: 14px;
     text-align: center;
-}
-
-.tasker ul {
-    background: #a5c1cd;
 }
 
 .tasker li,
@@ -66,6 +66,7 @@ h1 {
     font: 18px/1.25em 'Lato', sans-serif;
 }
 
+/* Eingabefeld */
 .todo-header {
     display: inline-flex;
     background: white;
@@ -73,6 +74,7 @@ h1 {
     width: 100%;
 }
 
+/* Schriftfarbe im Eingabefeld*/
 #input-task {
     color: black;
 }
@@ -122,20 +124,9 @@ h1 {
     margin-right: 10px;
 }
 
-.todo-lists .task button {
-    color: #cdcdcd;
-    margin: 14px;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    opacity: 0;
-}
-
-.todo-lists .task button:hover {
-    color: #ed1c24;
-}
-
-.controls, li{
+/* Container für die Filter und Clear Buttons */
+.controls,
+li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -147,6 +138,7 @@ h1 {
     border-bottom: 1px solid #ccc;
 }
 
+/* Button Links als Dropdown mit allen Filtern */
 .controls select#filter {
     border: none;
     opacity: 0.6;
@@ -165,6 +157,7 @@ h1 {
     background-color: #1798fb;
 }
 
+/* Button Rechts um alle Aufgaben zu löschen */
 .controls .clear-btn {
     border: none;
     opacity: 0.6;
@@ -188,6 +181,101 @@ h1 {
     transform: scale(0.93);
 }
 
+/*Styles für innerhalb der Aufgaben*/
+
+/* Container gesamt */
+.task-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.task.even {
+    background-color: #a5c1cd;
+}
+
+.task.odd {
+    background-color: #94adb8;
+}
+
+/* Style Checkbox */
+.chkbox {
+    transform: scale(1.5);
+}
+
+/* Style für die Aufgabe */
+.aufgabe {
+    text-align: left;
+}
+
+/* Container für die Items */
+.items {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Style Pencil (items) */
+.fa-pencil {
+    color: #4A565C;
+}
+
+/* Hover-Effekt Pencil */
+.fa-pencil:hover {
+    color: #d3d3b0;
+    transform: scale(1.5);
+}
+
+/* Style Trash (items) */
+.fa-trash {
+    color: #4A565C;
+}
+
+/* Hover-Effekt für Trash-Icon */
+.fa-trash:hover {
+    color: #ed1c24;
+    transform: scale(1.5);
+}
+
+.dates {
+    margin-left: 1.9em;
+    /* clear:both;
+    display:block;
+    color: orange;*/
+}
+
+/* Style Datum
+.task.even,
+.task.odd {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+*/
+.date-created {
+    font-size: 13px;
+    color: #4A565C;
+    align-items: center;
+}
+
+.task.even input[type="date"],
+.task.odd input[type="date"] {
+    font-size: 13px;
+    color: #4A565C;
+} 
+.dreiTage {
+    color: #a30a0a;
+}
+.fuenfTage {
+    color: #c89318;
+}
+
+
+/* Design Modal */
 #modal-wrapper * {
     margin: 0;
     padding: 0;
