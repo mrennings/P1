@@ -65,6 +65,7 @@ function createTodoLI() {
             inputDue.setAttribute("type", "date");
             inputDue.id = todo.created;
             inputDue.min = new Date().toISOString().replace(/T.*$/, "");
+            inputDue.classList.add("date-input");
             if (todo.due) {
                 inputDue.value = new Date(todo.due).toISOString().replace(/T.*$/, "");
                 if (todo.due - dreiTage < Date.now()) {

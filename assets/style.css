@@ -388,3 +388,8 @@ li.task:nth-child(even) {
     grid-row: 2;
     grid-column: 2;
 }
+
+.date-input {
+    color: inherit;
+    font-size: inherit !important;
+}
