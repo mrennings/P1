@@ -191,11 +191,12 @@ li {
     gap: 10px;
 }
 
-.task.even {
+
+li.task {
     background-color: #a5c1cd;
 }
 
-.task.odd {
+li.task:nth-child(even) {
     background-color: #94adb8;
 }
 
@@ -233,10 +234,6 @@ li {
 .fa-trash:hover {
     color: #ed1c24;
     transform: scale(1.5);
-}
-
-.dates {
-    margin-left: 1.9em;
 }
 
 /* Style Datum */
@@ -361,4 +358,34 @@ li {
 
 #modal-wrapper .hidden {
     display: none;
+}
+
+.task-container {
+    display: inline-grid !important;
+    gap: 5px;
+    grid: auto auto / 20px 380px 20px;
+    align-items: center;
+}
+
+.chkbox {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.aufgabe {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.items {
+    grid-column: 3;
+    flex-direction: column;
+    /* grid-row-start: 1;
+    grid-row-end: 2; */
+    grid-row: 1 / span 2;
+}
+
+.dates {
+    grid-row: 2;
+    grid-column: 2;
 }

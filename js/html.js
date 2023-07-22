@@ -23,46 +23,40 @@ function createTodoLI() {
     };
 
     tasklist.innerHTML = "";
-    let row = 0;
     arr.forEach((todo) => {
         const li = document.createElement("li");
         li.className = todo.isDone ? "task completed" : "task";
-        li.classList.add(row % 2 == 0 ? "even" : "odd");
         
         // ! Container-Div
         const containerDiv = li.appendChild(document.createElement("div"));
         containerDiv.classList.add("task-container");
-        // ! div: Done
+            // ! div: Done
         const doneDiv = containerDiv.appendChild(document.createElement("div"));
         doneDiv.classList.add("chkbox");
         const doneBox = doneDiv.appendChild(document.createElement("input"));
-        // const doneBox = li.appendChild(document.createElement("input"));
         doneBox.setAttribute("type", "checkbox");
-        //doneBox.classList.add("chkbox");
         doneBox.checked = todo["isDone"] ? true : false;
         doneBox.addEventListener("change", () => markTaskDone(doneBox, todo.created));
 
-        // ! div: ToDo-Text
+            // ! div: ToDo-Text
         const textDiv = containerDiv.appendChild(document.createElement("div"));
         textDiv.classList.add("aufgabe");
         const textTask = textDiv.appendChild(document.createTextNode(todo["todo"]));
-        // const textTask = li.appendChild(document.createTextNode(todo["todo"]));
         
-        // ! div: Actions (Delete, Edit, Date Created, …)
+            // ! div: Actions (Delete, Edit, Date Created, …)
         const actionsDiv = containerDiv.appendChild(document.createElement("div"));
         actionsDiv.classList.add("items")
         
         const btnEdit = actionsDiv.appendChild(document.createElement("i"));
-        // const btnEdit = li.appendChild(document.createElement("i"));
         btnEdit.classList.add("fa", "fa-pencil");
         btnEdit.addEventListener("click", () => openModal(todo.created));
 
         const btnDel = actionsDiv.appendChild(document.createElement("i"));
-        // const btnDel = li.appendChild(document.createElement("i"));
         btnDel.classList.add("fa", "fa-trash");
         btnDel.addEventListener("click", () => delTask(todo.created));
         
-        const dateDiv = li.appendChild(document.createElement("div"));
+            // ! Datum
+        const dateDiv = containerDiv.appendChild(document.createElement("div"));
         dateDiv.classList.add("dates");
         const textSpan = dateDiv.appendChild(document.createElement("span"));
         textSpan.innerHTML = new Date(todo.created).toLocaleDateString() + " → ";
@@ -88,11 +82,9 @@ function createTodoLI() {
                 textSpan.innerHTML += new Date(todo.due).toLocaleDateString();
             }
         }
-        //const textCreated = actionsDiv.appendChild(document.createTextNode(new Date(todo.created).toLocaleDateString()));
-        // const textCreated = li.appendChild(document.createTextNode(new Date(todo.created).toLocaleDateString()));
+        // ! ENDE: Container-Div
 
         tasklist.appendChild(li);
-        row++;
     });
 };
 
