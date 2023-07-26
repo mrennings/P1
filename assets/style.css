@@ -1,8 +1,17 @@
+/* https: //gwfh.mranftl.com/fonts */
+@font-face {
+    font-display: swap;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./raleway-v28-latin_latin-ext-500.woff2') format('woff2');
+}
+
 /* Body Todo-Liste */
 body {
     margin: 10px;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: Raleway, sans-serif;
     background: #c9d4da;
 }
 
@@ -36,6 +45,7 @@ h1 {
     border: none;
     outline: none;
     background: transparent;
+    font: 18px/1.25em 'Raleway', sans-serif;
 }
 
 .todo-header button,
@@ -57,13 +67,6 @@ h1 {
     color: #fff;
     padding: 14px;
     text-align: center;
-}
-
-.tasker li,
-.tasker .error,
-.tasker button,
-.tasker input {
-    font: 18px/1.25em 'Lato', sans-serif;
 }
 
 /* Eingabefeld */
@@ -98,6 +101,10 @@ h1 {
 
 .todo-header button:hover {
     background: #5cb85c;
+    transform: scale(1.2);
+    border: 2px solid #098009;
+    border-radius: 5px;
+    display: flex;
 }
 
 .todo-lists .task {
@@ -116,7 +123,7 @@ h1 {
 }
 
 .todo-lists .task.completed {
-    color: #cdcdcd;
+    color: #758479;
     text-decoration: line-through;
 }
 
@@ -183,15 +190,6 @@ li {
 
 /*Styles für innerhalb der Aufgaben*/
 
-/* Container gesamt */
-.task-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-}
-
-
 li.task {
     background-color: #a5c1cd;
 }
@@ -205,25 +203,13 @@ li.task:nth-child(even) {
     transform: scale(1.5);
 }
 
-/* Style für die Aufgabe */
-.aufgabe {
-    text-align: left;
-}
-
-/* Container für die Items */
-.items {
-    display: flex;
-    /* justify-content: right;
-    align-items: center; */
-    gap: 5px;
-}
 /* Style Pencil (items) */
 .fa-pencil {
     color: #4A565C;
 }
 /* Hover-Effekt Pencil */
 .fa-pencil:hover {
-    color: #d3d3b0;
+    color: #00b934;
     transform: scale(1.5);
 }
 /* Style Trash (items) */
@@ -232,31 +218,27 @@ li.task:nth-child(even) {
 }
 /* Hover-Effekt für Trash-Icon */
 .fa-trash:hover {
-    color: #ed1c24;
+    color: #e90d14c1;
     transform: scale(1.5);
 }
 
 /* Style Datum */
 .date-created {
-    font-size: 13px;
+    font-size: 14px;
     color: #4A565C;
 }
 
-.task.even input[type="date"],
-.task.odd input[type="date"] {
-    font-size: 13px;
-    color: #4A565C;
-} 
+
 .dreiTage {
     color: #a30a0a !important; 
 }
 .fuenfTage {
-    color: #c89318 !important;
+    color: #e2b609da !important;
 }
 
 
 /* Design Modal */
-#modal-wrapper * {
+/* #modal-wrapper * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -271,7 +253,7 @@ li.task:nth-child(even) {
     color: #222;
     position: relative;
     min-height: 100vh;
-}
+} */
 
 #modal-wrapper .modal {
     display: flex;
@@ -380,8 +362,10 @@ li.task:nth-child(even) {
 
 .items {
     grid-column: 3;
+    display: flex;
     flex-direction: column;
     grid-row: 1 / span 2;
+    gap: 5px;
 }
 
 .dates {
